@@ -62,4 +62,5 @@ typings/
 
 #built dir
 dist/
+package-lock.json
 
