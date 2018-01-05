@@ -1,6 +1,5 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -18,7 +17,7 @@ module.exports = {
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
 
-    './client/index.js'
+    './client/index.js',
     // the entry point of our app
   ],
   output: {
@@ -52,7 +51,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        /*test: /\.scss$/,
+        test: /\.scss$/,
         use: [{
           loader: "style-loader"
         }, {
@@ -63,24 +62,24 @@ module.exports = {
             includePaths: ["absolute/path/a", "absolute/path/b"]
           }
         }]
-      },*/
-        test: /\.scss$/,
-        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-            use: [
-              'css-loader', // translates CSS into CommonJS
-              'sass-loader', // compiles Sass to CSS
-              //'style-loader'
-            ],
-            fallback: "style-loader" // used when css not extracted
-          },
-        ))
+      },
+      {
+        test: /\.css$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }]
       },
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
         use:
           'url-loader'
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       }
-      ,
     ]
   },
   plugins: [
@@ -94,8 +93,6 @@ module.exports = {
 
     new webpack.NamedModulesPlugin(),
     // prints more readable module names in the browser console on HMR updates
-
-    new ExtractTextPlugin({filename: 'stylesheets.css', allChunks: true})
   ],
 }
 ;

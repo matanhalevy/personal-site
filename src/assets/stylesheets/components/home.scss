@@ -1,0 +1,72 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .typist {
+    font-family: "Operator Mono";
+    color: $colour-primary;
+    font-size: 2.5em;
+  }
+
+  .headshot {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+    margin-right: 2em;
+  }
+
+  .intro-container {
+    margin: 2em 0 0 5em;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    max-width: 550px;
+    background: $light-primary;
+    opacity: 1;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.36), 0 8px 10px rgba(0, 0, 0, 0.12);
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    h4 {
+      margin-bottom: 0px;
+    }
+    p {
+      margin-top: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      font-family: "Antic Slab";
+      color: $dark-primary;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  }
+
+  .platform-links {
+    display: flex;
+    flex-direction: row;
+    //padding-left: 3em;
+    margin-left: 5em;
+
+    .platform-img {
+      height: 2.5em;
+      width: 2.5em;
+      margin-right: 2em;
+    }
+    h2 {
+      margin-right: 2em;
+    }
+  }
+
+  h2, h4 {
+    margin-right: 4px;
+    font-family: "Raleway";
+    color: $dark-primary;
+  }
+}

@@ -1,16 +1,80 @@
 .main {
+  // COLOURS
+  $light-primary: #c2cbcb;
+  $colour-primary: #236267;
+  $dark-primary: #00181B;
+  $light-secondary: #5C8A8E;
+  $dark-secondary: #023C41;
+
+  // FONTS
+  @font-face {
+    font-family: "Titillium Web";
+    src: local('../fonts/TitilliumWeb-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: local('../fonts/Montserrat-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: local('../fonts/Raleway-Regular_0.ttf');
+  }
+
+  @font-face {
+    font-family: "Antic Slab";
+    src: local('../fonts/AnticSlap-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: "Operator Mono";
+    src: local('../fonts/OperatorMono-Book.ttf');
+  }
+
+  // IMPORTS
   @import 'components/navbar';
+  @import 'components/home';
 
   .container {
     display: flex;
     flex-direction: column;
+    height:100vh;
   }
+
   .header {
     font-size: 3em;
-    color: red;
+    color: $colour-primary;
   }
+
+  .overlay {
+    position: absolute;
+    left: 0; top: 64px; right: 0; bottom: 0;
+  }
+
+  .particle-container {
+    height: calc(100vh - 80px);
+  }
+
 }
 
 body {
   margin: 0;
 }
+
+//MIXINS
+//
+//@mixin fontFace($family,$src,$style: normal,$weight: normal) {
+//  @font-face {
+//    font-family: $family;
+//    src: url('#{$src}.eot'); // IE9 compat
+//    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+//    url('#{$src}.woff') format('woff'), // standards
+//    url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+//    url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+//
+//    font-style: $style;
+//    font-weight: $weight;
+//  }
+//}
+//

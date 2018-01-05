@@ -8,31 +8,25 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <div className="navbar-component">
-        <div className="navbar area">
-          <a className="brand"><Link to='/'>LOGO</Link> </a>
-          <nav role="navigation" className="list">
-            <a className="item -link">
-              <Link to='/about'>
+      <div className='nav'>
+        <div className="navbar-component">
+          <div className="navbar area">
+            <Link to='/' className="brand">LOGO</Link>
+            <nav role="navigation" className="list">
+              <Link to='/about' className="item -link">
                 About Me
               </Link>
-            </a>
-            <a className="item -link">
-              <Link to='/projects'>
+              <Link to='/projects' className="item -link">
                 Projects
               </Link>
-            </a>
-            <a className="item -link">
-              <Link to='/resume'>
+              <Link to='/resume' className="item -link">
                 Resume
               </Link>
-            </a>
-            <a className="item -link">
-              <Link to='/contact'>
+              <Link to='/contact' className="item -link">
                 Contact Me
               </Link>
-            </a>
-          </nav>
+            </nav>
+          </div>
         </div>
       </div>
     )

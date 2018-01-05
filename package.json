@@ -7,7 +7,8 @@
     "start": "webpack-dev-server --progress --colors --hot --inline",
     "start:dev": "webpack-dev-server --config ./webpack.dev.config.js  --progress --colors",
     "build:dev": "webpack --config ./webpack.dev.config.js --progress --colors",
-    "build": "webpack -p --config ./webpack.prod.config.js --progress --colors"
+    "build": "webpack -p --config ./webpack.prod.config.js --progress --colors",
+    "dstart": "webpack --config ./webpack.dev.config.js --progress --colors && webpack-dev-server --config ./webpack.dev.config.js  --progress --colors"
   },
   "author": "srinivasan",
   "license": "MIT",
@@ -29,12 +30,15 @@
     "react-hot-loader": "3.1.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
+    "svg-inline-loader": "^0.8.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-server": "2.9.4"
   },
   "dependencies": {
-    "react-router-dom": "^4.2.2"
+    "particles.js": "^2.0.0",
+    "react-router-dom": "^4.2.2",
+    "react-typist": "^2.0.4"
   }
 }
